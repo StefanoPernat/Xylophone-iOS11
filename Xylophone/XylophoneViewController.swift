@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class XylophoneViewController: UIViewController{
     
 
     override func viewDidLoad() {
@@ -18,9 +18,7 @@ class ViewController: UIViewController{
 
 
     @IBAction func notePressed(_ sender: UIButton) {
-        
-        
-        
+        print(sender.tag)
     }
     
   
