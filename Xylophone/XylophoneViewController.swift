@@ -19,16 +19,16 @@ class XylophoneViewController: UIViewController{
 
 
     @IBAction func notePressed(_ sender: UIButton) {
-        let selectedSoundFile = "note\(sender.tag)"
-        let url = Bundle.main.url(forResource: selectedSoundFile, withExtension: "wav")!
+        playSound(which: sender.tag)
+    }
+    
+    func playSound(which sound: Int) {
+        let soundUrl = Bundle.main.url(forResource: "note\(sound)", withExtension: "wav")!
         
-        player = try? AVAudioPlayer(contentsOf: url)
-        
+        player = try? AVAudioPlayer(contentsOf: soundUrl)
         if let player = player {
             player.play()
         }
-        
-        
     }
     
   
